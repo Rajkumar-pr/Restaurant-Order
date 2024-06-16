@@ -1,0 +1,28 @@
+.boxes-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .box {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .box:hover {
+    background-color: skyblue;
+  }
+  
+  .selected-box {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
