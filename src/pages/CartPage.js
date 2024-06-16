@@ -6,7 +6,7 @@ import UserContext from "../UserContext";
 import { Link } from "react-router-dom";
 import Layout from "../component/Layout/Layout";
 const CartPage = () => {
-  const {cartItems,setCartItems,tot,tab,setTot}=useContext(UserContext);
+  const {cartItems,tot,tab}=useContext(UserContext);
   useEffect(() => {
     const fetchData = async () => {
       try {
