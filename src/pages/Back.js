@@ -1,26 +1,27 @@
 
 
-import React, {  useContext,useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../component/Layout/Layout";
 import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
 import { MenuList } from "../data/data";
-
 import UserContext from "../UserContext";
 
 const Menu = () => {
-  const { cartItems, setCartItems,tot, tab, setTot } = useContext(UserContext);
+  const { cartItems, setCartItems, tot, tab, setTot } = useContext(UserContext);
 
   const addToCart = (menu) => {
     setTot((tot) => tot + menu.price);
     setCartItems([...cartItems, menu]);
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     setCartItems([]);
     setTot(0);
-  },[tab])
-const logy=(()=>{alert("first login the age")});
+  }, [setCartItems, setTot, tab]);  // Added missing dependencies
+
+  const logy = () => { alert("first login the age") };
+
   return (
     <Layout>
       <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
@@ -42,7 +43,6 @@ const logy=(()=>{alert("first login the age")});
                 {/* Add to Cart Button */}
                 <button style={{ backgroundColor: 'blue', marginTop: '20px' }} onClick={() => addToCart(menu)}>Add To Cart</button>
                 <br />
-               
               </CardContent>
             </CardActionArea>
           </Card>
@@ -52,11 +52,8 @@ const logy=(()=>{alert("first login the age")});
       {tab}
       {/* Render Cart Component */}
       <Link to='/cart'>
-     
         <button onClick={logy}>
-         
           View Total Cart
-
         </button>
       </Link>
     </Layout>
