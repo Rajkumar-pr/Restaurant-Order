@@ -51,7 +51,7 @@ const logy=(()=>{alert("first login the age")});
       {tot}
       {tab}
       {/* Render Cart Component */}
-      <Link to='/login'>
+      <Link to='/cart'>
      
         <button onClick={logy}>
          
